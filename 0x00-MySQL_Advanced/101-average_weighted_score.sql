@@ -5,7 +5,7 @@ CREATE PROCEDURE ComputeAverageWeightedScoreForUsers()
 BEGIN
     DECLARE num_rows INT;
     DECLARE idx INT;
-    DECLARE w_avg INT;
+    DECLARE w_avg FLOAT;
     CREATE TEMPORARY TABLE weighted_avgs
     SELECT SUM(corrections.score * projects.weight) / SUM(projects.weight) as was,
     corrections.user_id
