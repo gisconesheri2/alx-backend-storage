@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 parse nginx log files in a mogodb database
 """
