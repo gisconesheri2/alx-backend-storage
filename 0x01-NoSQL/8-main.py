@@ -6,9 +6,6 @@ list_all = __import__('8-all').list_all
 if __name__ == "__main__":
     client = MongoClient('mongodb://127.0.0.1:27017')
     school_collection = client.my_db.school
-    sch1 = {"name": "kc"}
-    sch2 = {"name": "holberton"}
-    school_collection.insert_many([sch1, sch2])
     schools = list_all(school_collection)
     for school in schools:
         print("[{}] {}".format(school.get('_id'), school.get('name')))
