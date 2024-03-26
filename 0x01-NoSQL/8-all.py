@@ -12,4 +12,3 @@ def list_all(mongo_collection):
     for doc in mongo_collection.find():
         all_doc.append(doc)
     return all_doc
-
