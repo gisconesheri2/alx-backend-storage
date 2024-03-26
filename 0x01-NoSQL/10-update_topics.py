@@ -8,7 +8,7 @@ def update_topics(mongo_collection, name, topics):
     """
     update a document in a collection
     """
-    filter = {'school': name}
+    filter = {'name': name}
     print(filter)
     new_values = {"$set": {'topics': topics}}
     print(new_values)
