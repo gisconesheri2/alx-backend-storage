@@ -38,9 +38,12 @@ def call_history(method: Callable) -> Callable:
 
 
 def replay(method: Callable) -> None:
+    """
+    Replay the history of @method
+    """
     r = redis.Redis()
     mn = method.__qualname__
-    calls = r.get(mn)
+    calls = r.get(mn).decode('utf-8')
     print('{} was called {} times:'.format(mn, calls))
 
     inputs =r.lrange("{}:inputs".format(mn), 0, -1)
