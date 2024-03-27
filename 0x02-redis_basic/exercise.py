@@ -9,7 +9,7 @@ from typing import Union
 
 class Cache():
 
-    def store(data: Union[str, bytes, int, float]) -> str:
+    def store(self, data: Union[str, bytes, int, float]) -> str:
         k_str = str(uuid.uuid4())
-        r.set({k_str: data})
+        r.set(k_str, data)
         return k_str
