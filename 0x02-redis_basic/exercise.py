@@ -46,10 +46,10 @@ def replay(method: Callable) -> None:
     calls = r.get(mn).decode('utf-8')
     print('{} was called {} times:'.format(mn, calls))
 
-    inputs =r.lrange("{}:inputs".format(mn), 0, -1)
+    inputs = r.lrange("{}:inputs".format(mn), 0, -1)
     outputs = r.lrange("{}:outputs".format(mn), 0, -1)
     io = zip(inputs, outputs)
-    
+
     for i, o in io:
         i_str = i.decode('utf-8')
         o_str = o.decode('utf-8')
@@ -57,6 +57,9 @@ def replay(method: Callable) -> None:
 
 
 class Cache():
+    """
+    Model a cache class
+    """
 
     def __init__(self):
         """create a new instance"""
