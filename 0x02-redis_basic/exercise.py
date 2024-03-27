@@ -50,7 +50,7 @@ def replay(method: Callable) -> None:
     for i, o in io:
         i_str = i.decode('utf-8')
         o_str = o.decode('utf-8')
-        print('{}(*({})) -> {}'.format(mn, i_str, o_str))
+        print('{}(*{}) -> {}'.format(mn, i_str, o_str))
 
 
 class Cache():
